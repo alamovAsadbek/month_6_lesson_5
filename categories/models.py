@@ -3,7 +3,7 @@ from django.db import models
 
 class CategoryModel(models.Model):
     name = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True, auto_created=name)
+    slug = models.SlugField(blank=True, null=True, unique=True)
     description = models.TextField(blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
