@@ -87,6 +87,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+mediaroot = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = mediaroot
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
