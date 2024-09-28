@@ -7,7 +7,7 @@ class BookModel(models.Model):
     author = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
-    
+    category = models.ForeignKey('CategoryModel', on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
