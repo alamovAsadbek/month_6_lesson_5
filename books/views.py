@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 
-def books(request):
+def booksView(request):
     return render(request, 'index.html')
