@@ -6,7 +6,8 @@ from books.models import BookModel
 
 def booksView(request):
     all_books = BookModel.objects.all()
-    context = {'books': all_books}
+    categories = BookModel.objects.values_list('category', flat=True).distinct()
+    context = {'books': all_books, 'categories': categories}
     return render(request, 'index.html', context)
 
 
