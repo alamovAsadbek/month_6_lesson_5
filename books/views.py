@@ -11,3 +11,7 @@ def booksView(request):
 
 def bookDetailView(request, book_id):
     return render(request, 'card.html', {'book_id': book_id})
+
+
+def createBookView(request):
+    return render(request, 'add-book.htmll')
