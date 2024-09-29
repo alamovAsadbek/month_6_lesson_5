@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 
 from books.forms import BookModeForm
 from books.models import BookModel
+from categories.models import CategoryModel
 
 
 def booksView(request):
     all_books = BookModel.objects.all()
-    categories = BookModel.objects.values_list('category', flat=True).distinct()
+    # categories = BookModel.objects.values_list('category', flat=True).distinct()
+    categories = CategoryModel.objects.all()
     context = {'books': all_books, 'categories': categories}
     return render(request, 'index.html', context)
 
