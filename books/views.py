@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from books.forms import BookModeForm
+from books.forms import BookModelForm
 from books.models import BookModel
 from categories.models import CategoryModel
 
@@ -20,7 +20,7 @@ def createBookView(request, *args, **kwargs):
     categories = CategoryModel.objects.all()
     context = {'categories': categories}
     if request.method == 'POST':
-        form = BookModeForm(request.POST, request.FILES)
+        form = BookModelForm(request.POST, request.FILES)
         if form.is_valid():
             order = form.save()
             return redirect('/')
