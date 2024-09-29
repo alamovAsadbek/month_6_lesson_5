@@ -14,4 +14,8 @@ def bookDetailView(request, book_id):
 
 
 def createBookView(request, *args, **kwargs):
+    if request.method == 'POST':
+        form = BookModel(request.POST, request.FILES)
+        if form.is_valid():
+            print(form.cleaned_data)
     return render(request, 'add-book.html')
