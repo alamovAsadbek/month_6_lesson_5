@@ -1,10 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/card-style.css' %}">
 </head>
 <body>
+<div class="courses-container">
+    <div class="course">
+        <div class="course-preview">
+            <img src="https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY="
+                 alt="bookImage404">
+        </div>
+        <div class="course-info">
+            <div class="progress-container">
+                <span class="progress-text">
+                    {#  Book Author#}
+					Author
+				</span>
+            </div>
+            <span class="book-name">
+                Book name
+            </span>
+            <h6>Category</h6>
+            <h2>Book description</h2>
+            <button class="btn">Price</button>
+        </div>
+    </div>
+</div>
+
+<a class="floating-btn" href="/">
+    Back
+</a>
 
 </body>
 </html>
