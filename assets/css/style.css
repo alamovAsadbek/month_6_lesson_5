@@ -1,20 +1,21 @@
-.book-table .add-btn {
+.add-btn {
     border-color: rgb(229 231 235) !important;
     border-width: 1px;
 }
 
-.book-table .add-btn:hover {
+.add-btn:hover {
     background-color: rgb(229 231 235);
     transition: background-color 0.3s ease;
 }
 
-.book-table .row-book-img {
+.row-book-img {
     width: 60px;
     height: 35px;
     border-radius: 50%;
     margin-left: 10px;
     object-fit: cover;
 }
-body{
+
+body {
     background-color: #000000;
 }
