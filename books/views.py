@@ -1,8 +1,12 @@
 from django.shortcuts import render
 
+from books.models import BookModel
+
 
 def booksView(request):
-    return render(request, 'index.html')
+    all_books = BookModel.objects.all()
+    context = {'books': all_books}
+    return render(request, 'index.html', context)
 
 
 def bookDetailView(request, book_id):
