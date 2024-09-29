@@ -233,11 +233,6 @@ body {
     z-index: 999;
 }
 
-.floating-btn a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
 .floating-btn:hover {
     background-color: #ffffff;
     color: #001F61;
