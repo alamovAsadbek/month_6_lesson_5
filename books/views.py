@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from books.forms import BookModeForm
 from books.models import BookModel
 
 
@@ -15,7 +16,8 @@ def bookDetailView(request, book_id):
 
 def createBookView(request, *args, **kwargs):
     if request.method == 'POST':
-        form = BookModel(request.POST, request.FILES)
+        form = BookModeForm(request.POST, request.FILES)
         if form.is_valid():
-            print(form.cleaned_data)
+            order = form.save()
+            return redirect('/')
     return render(request, 'add-book.html')
