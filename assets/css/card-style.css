@@ -69,6 +69,8 @@ body {
 }
 
 .progress-text {
+    position: relative;
+    top: -5px;
     font-size: 10px;
     opacity: 0.6;
     letter-spacing: 1px;
