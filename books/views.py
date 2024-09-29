@@ -23,4 +23,5 @@ def createBookView(request, *args, **kwargs):
         form = BookModelForm(request.POST, request.FILES)
         if form.is_valid():
             order = form.save()
-    return redirect('/')
+            return redirect('/')
+    return render(request, 'add-book.html', context)
