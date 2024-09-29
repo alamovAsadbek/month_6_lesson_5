@@ -8,8 +8,7 @@ from categories.models import CategoryModel
 def booksView(request):
     all_books = BookModel.objects.all()
     # categories = BookModel.objects.values_list('category', flat=True).distinct()
-    categories = CategoryModel.objects.all()
-    context = {'books': all_books, 'categories': categories}
+    context = {'books': all_books}
     return render(request, 'index.html', context)
 
 
@@ -18,9 +17,11 @@ def bookDetailView(request, book_id):
 
 
 def createBookView(request, *args, **kwargs):
+    categories = CategoryModel.objects.all()
+    context = {'categories': categories}
     if request.method == 'POST':
         form = BookModeForm(request.POST, request.FILES)
         if form.is_valid():
             order = form.save()
             return redirect('/')
-    return render(request, 'add-book.html')
+    return render(request, 'add-book.html', context)
