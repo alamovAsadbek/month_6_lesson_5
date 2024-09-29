@@ -232,6 +232,7 @@ body {
     right: 20px;
     z-index: 999;
     text-decoration: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .floating-btn:hover {
