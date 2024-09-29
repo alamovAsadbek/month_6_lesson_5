@@ -1,14 +1,14 @@
-.add-btn {
+.book-table .add-btn {
     border-color: rgb(229 231 235) !important;
     border-width: 1px;
 }
 
-.add-btn:hover {
+.book-table .add-btn:hover {
     background-color: rgb(229 231 235);
     transition: background-color 0.3s ease;
 }
 
-.row-book-img {
+.book-table .row-book-img {
     width: 60px;
     height: 35px;
     border-radius: 50%;
