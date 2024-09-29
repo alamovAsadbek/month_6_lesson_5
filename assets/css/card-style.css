@@ -51,7 +51,9 @@ body {
 }
 
 .course-preview img {
-    
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .course-info {
