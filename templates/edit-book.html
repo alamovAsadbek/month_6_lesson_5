@@ -70,7 +70,7 @@
                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" style="font-weight: 600;">
                     Image
                 </label>
-                <input type="file" accept="image/*" name="image" value="{{ book.image.url }}">
+                <input type="file" accept="image/*" required name="image" value="{{ book.image.url }}">
                 <h4 class="mt-4" style="font-weight: 600; font-size: 18px;">Current Image</h4>
                 <img src="{{ book.image.url }}" alt="404" style="width: 15em; height: auto;">
             </div>
