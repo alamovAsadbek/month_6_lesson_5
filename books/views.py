@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from books.forms import BookModelForm
 from books.models import BookModel
@@ -29,7 +29,7 @@ def createBookView(request, *args, **kwargs):
 
 
 def updateBookView(request, book_id):
-    book = BookModel.objects.get(id=book_id)
+    book = get_object_or_404(BookModel, id=book_id)
     categories = CategoryModel.objects.all()
     context = {'book': book, 'categories': categories}
     if request.method == 'POST':
