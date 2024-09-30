@@ -42,3 +42,9 @@ def updateBookView(request, book_id):
 
     context = {'form': form, 'categories': categories, 'book': book}
     return render(request, 'edit-book.html', context)
+
+
+def deleteBookView(request, book_id):
+    book = get_object_or_404(BookModel, id=book_id)
+    book.delete()
+    return redirect('/')
