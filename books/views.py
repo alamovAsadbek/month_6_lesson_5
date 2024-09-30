@@ -14,7 +14,6 @@ def booksView(request):
 def bookDetailView(request, book_id):
     book = BookModel.objects.get(id=book_id)
     context = {'book': book}
-    print(book)
     return render(request, 'card.html', context)
 
 
