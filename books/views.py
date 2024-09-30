@@ -31,10 +31,14 @@ def createBookView(request, *args, **kwargs):
 def updateBookView(request, book_id):
     book = get_object_or_404(BookModel, id=book_id)
     categories = CategoryModel.objects.all()
-    context = {'book': book, 'categories': categories}
+
     if request.method == 'POST':
         form = BookModelForm(request.POST, request.FILES, instance=book)
         if form.is_valid():
             form.save()
             return redirect('/')
+    else:
+        form = BookModelForm(instance=book)
+
+    context = {'form': form, 'categories': categories, 'book': book}
     return render(request, 'edit-book.html', context)
