@@ -21,7 +21,7 @@
                 <input type="text" name="name"
                        required=""
                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                       placeholder="Type book name">
+                       placeholder="Type book name" value="{{ book.name }}">
             </div>
             <div>
                 <label for="brand"
@@ -30,7 +30,7 @@
                 </label>
                 <input type="text" name="author"
                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                       placeholder="Book Author" required="">
+                       placeholder="Book Author" required="" value="{{ book.author }}">
             </div>
             <div>
                 <label for="price"
@@ -39,7 +39,7 @@
                 </label>
                 <input type="number" name="price"
                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                       placeholder="$2999" required="">
+                       placeholder="$2999" required="" value="{{ book.price }}">
             </div>
             <div>
                 <label for="category"
@@ -49,9 +49,11 @@
                 <select
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         name="category" required="">
-                    <option selected="">Select category</option>
                     {% for category in categories %}
-                        <option value="{{ category.id }}">{{ category.name }}</option>
+                        <option value="{{ category.id }}"
+                                {% if category.id == book.category.id %}selected{% endif %}>
+                            {{ category.name }}
+                        </option>
                     {% endfor %}
                 </select></div>
             <div class="sm:col-span-2">
