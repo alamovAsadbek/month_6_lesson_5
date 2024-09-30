@@ -11,7 +11,7 @@
 <div class="courses-container">
     <form action='{% url "create_book" %}' method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <h2 style="font-weight: 800; font-size: 25px; margin-bottom: 25px">Add new book</h2>
+        <h2 style="font-weight: 800; font-size: 25px; margin-bottom: 25px">Edit book</h2>
         <div class="grid gap-4 mb-4 sm:grid-cols-2">
             <div>
                 <label for="name"
