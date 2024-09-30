@@ -10,22 +10,22 @@
 <div class="courses-container">
     <div class="course">
         <div class="course-preview">
-            <img src="#"
+            <img src="{{ book.image.url }}"
                  alt="bookImage404">
         </div>
         <div class="course-info">
             <div class="progress-container">
                 <span class="progress-text">
                     {#  Book Author#}
-					Author
+					{{ book.author }}
 				</span>
             </div>
             <span class="book-name">
-                Book name
+                {{ book.name }}
             </span>
-            <h6>Category</h6>
-            <h2>Book description</h2>
-            <button class="btn">Price</button>
+            <h6>{{ book.category }}</h6>
+            <h2>{{ book.description }}</h2>
+            <button class="btn">{{ book.price }}</button>
         </div>
     </div>
 </div>
